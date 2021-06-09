@@ -19,6 +19,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
+
+    // Adding data binding to the app
+        buildFeatures {
+            dataBinding true
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
