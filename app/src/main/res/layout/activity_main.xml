@@ -2,11 +2,20 @@
 <layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
+        <!--We add a fragment tag for login Fragment in the Layout
+         We use com.example.android.navigation.LogInFragment for the android name-->
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/loginfragment"
+            android:name="com.udacity.shoestore.LogInFragment"/>
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_height="wrap_content"
@@ -15,6 +24,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
+                app:title="@string/app_name"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"

@@ -8,4 +8,5 @@
     <string name="shoe_inventory">Shoe Inventory</string>
     <string name="name_hint">username</string>
     <string name="password_hint">password</string>
+    
 </resources>
