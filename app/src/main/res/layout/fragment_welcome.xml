@@ -100,7 +100,7 @@
             android:contentDescription="@string/get_started"
 
             android:src="@drawable/forward"
-            app:backgroundTint="#100000"
+            app:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.885"
