@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".LogInFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_light_background"
@@ -15,7 +15,7 @@
     android:paddingRight="4dp"
     android:paddingBottom="4dp">
 
-    <Button
+        <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/passwordfield" />
 
-    <Button
+        <Button
         android:id="@+id/signup"
         style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintVertical_bias="0.155" />
 
-    <EditText
+        <EditText
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.407" />
 
-    <EditText
+        <EditText
         android:id="@+id/passwordfield"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

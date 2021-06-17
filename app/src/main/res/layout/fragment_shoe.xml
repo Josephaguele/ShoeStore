@@ -1,37 +1,42 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context="com.udacity.shoestore.ShoeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fillViewport="true"
+        tools:context="com.udacity.shoestore.ShoeFragment">
 
-        <ImageView
-            android:id="@+id/rulesImage"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/image_header_height" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/rulesText"
-            android:layout_width="match_parent"
-            android:layout_height="391dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            <ImageView
+                android:id="@+id/rulesImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/image_header_height" />
+
+            <TextView
+                android:id="@+id/rulesText"
+                android:layout_width="match_parent"
+                android:layout_height="391dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:contentDescription="@string/get_started"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/shoefloatingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/get_started"
 
-            android:src="@drawable/forward"
-            app:backgroundTint="@color/colorPrimaryDark" />
-    </LinearLayout>
+                android:src="@drawable/forward"
+                app:backgroundTint="@color/colorPrimaryDark" />
+        </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+</layout>
+
+
