@@ -29,7 +29,11 @@
         android:id="@+id/instructionFragment"
         android:name="com.udacity.shoestore.InstructionFragment"
         android:label="fragment_instruction"
-        tools:layout="@layout/fragment_instruction" />
+        tools:layout="@layout/fragment_instruction" >
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeFragment"
+            app:destination="@id/shoeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shoeFragment"
         android:name="com.udacity.shoestore.ShoeFragment"

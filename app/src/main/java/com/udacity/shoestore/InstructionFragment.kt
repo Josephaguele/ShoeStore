@@ -9,8 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
-import com.udacity.shoestore.databinding.FragmentLoginBinding
-import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class InstructionFragment : Fragment() {
 
@@ -20,8 +18,9 @@ class InstructionFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentInstructionBinding>(
             inflater, R.layout.fragment_instruction, container, false)
 
-        binding.instructionButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_instructionFragment)
+        // navigate from instruction fragment to shoe store fragment
+        binding.navigatetoshoestoreButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_instructionFragment_to_shoeFragment)
         )
         return binding.root
     }

@@ -97,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:contentDescription="@string/click_tosee"
+                android:tooltipText="@string/skip_instruction"
 
                 android:src="@drawable/forward"
                 app:backgroundTint="@color/colorPrimaryDark"
@@ -108,11 +109,12 @@
                 app:layout_constraintVertical_bias="0.589" />
 
             <Button
-                android:id="@+id/instruction_button"
+                android:id="@+id/instructionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/see_instruction"
                 android:text="@string/instruct"
+                android:tooltipText="@string/view_instruction"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
