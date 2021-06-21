@@ -20,10 +20,15 @@
         android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_instructionFragment"
-            app:destination="@id/instructionFragment" />
+            app:destination="@id/instructionFragment"
+            app:enterAnim="@anim/slide_in_right" />
         <action
             android:id="@+id/action_welcomeFragment_to_shoeFragment"
-            app:destination="@id/shoeFragment" />
+            app:destination="@id/shoeFragment"
+            app:enterAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_welcomeFragment_self"
+            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructionFragment"
@@ -33,9 +38,30 @@
         <action
             android:id="@+id/action_instructionFragment_to_shoeFragment"
             app:destination="@id/shoeFragment" />
+        <action
+            android:id="@+id/action_instructionFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/shoeFragment"
         android:name="com.udacity.shoestore.ShoeFragment"
-        android:label="ShoeFragment" />
+        android:label="ShoeFragment" >
+        <action
+            android:id="@+id/action_shoeFragment_to_welcomeFragment2"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_shoeFragment_to_shoeDetail"
+            app:destination="@id/shoeDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetail"
+        android:name="com.udacity.shoestore.ShoeDetail"
+        android:label="fragment_shoe_detail"
+        tools:layout="@layout/fragment_shoe_detail" >
+        <action
+            android:id="@+id/action_shoeDetail_to_shoeFragment"
+            app:destination="@id/shoeFragment"
+            app:exitAnim="@anim/slide_anyhow"/>
+    </fragment>
 </navigation>
