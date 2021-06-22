@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.udacity.shoestore.databinding.FragmentShoeBinding
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 
 

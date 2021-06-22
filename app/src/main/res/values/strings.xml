@@ -15,5 +15,7 @@
     <string name="instruct">Instruction</string>
     <string name="view_instruction">View Instruction</string>
     <string name="skip_instruction">skip instruction</string>
+    <string name="brand_name">Brand Name</string>
+    <string name="shoe_name">Shoe Name</string>
 
 </resources>

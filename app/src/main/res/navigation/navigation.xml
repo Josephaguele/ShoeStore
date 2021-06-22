@@ -8,17 +8,17 @@
     <fragment
         android:id="@+id/logInFragment"
         android:name="com.udacity.shoestore.welcome.LogInFragment"
-        android:label="fragment_login"
+        android:label="Log in"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_logInFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
-            app:enterAnim="@anim/slide_out_left" />
+            app:enterAnim="@anim/slide_in_right" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.shoestore.welcome.WelcomeFragment"
-        android:label="WelcomeFragment" >
+        android:label="Welcome Fragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_shoeFragment"
             app:destination="@id/shoeFragment"
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/shoeFragment"
         android:name="com.udacity.shoestore.ShoeFragment"
-        android:label="ShoeFragment" >
+        android:label="Shoe Fragment" >
         <action
             android:id="@+id/action_shoeFragment_to_welcomeFragment2"
             app:destination="@id/welcomeFragment" />
