@@ -26,9 +26,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/welcomeConstraintLayout"
-            android:background="#ffffff"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#ffffff">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -52,9 +52,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="62dp"
                 android:text="@string/shoe_inventory"
+                android:textColor="#040404"
                 android:textSize="36sp"
                 android:textStyle="bold"
-                android:textColor="#040404"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -66,11 +66,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="@string/welcome"
-                android:textSize="18sp"
-                android:textColor="#040404"
-                android:textStyle="bold"
                 android:fontFamily="@font/aclonica"
+                android:text="@string/welcome"
+                android:textColor="#040404"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.158"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,30 +95,24 @@
                 android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="279dp"
+                android:layout_marginTop="566dp"
+                android:layout_marginEnd="40dp"
+
+                android:layout_marginBottom="68dp"
                 android:clickable="true"
                 android:contentDescription="@string/click_tosee"
-                android:tooltipText="@string/skip_instruction"
-
                 android:src="@drawable/forward"
+                android:tooltipText="@string/skip_instruction"
                 app:backgroundTint="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.885"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.589" />
 
-            <Button
-                android:id="@+id/instructionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/see_instruction"
-                android:text="@string/instruct"
-                android:tooltipText="@string/view_instruction"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

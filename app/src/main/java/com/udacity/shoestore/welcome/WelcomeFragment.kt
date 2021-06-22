@@ -19,10 +19,6 @@ class WelcomeFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentWelcomeBinding>(
             inflater, R.layout.fragment_welcome, container, false)
 
-        // on click listener for instruction Button in the welcome fragment
-        binding.instructionButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_welcomeFragment_to_instructionFragment)
-        )
 
         // on click listener for floating Action button in the welcome fragment
         binding.floatingActionButton.setOnClickListener(
