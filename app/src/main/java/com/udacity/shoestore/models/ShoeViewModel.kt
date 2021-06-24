@@ -1,6 +1,8 @@
 package com.udacity.shoestore.models
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ShoeViewModel : ViewModel() {
@@ -15,9 +17,10 @@ class ShoeViewModel : ViewModel() {
     }
 
 
-    // the list of shoes
-    private lateinit var shoeList: MutableList<String>
-
+    // The current shoebrandName
+    private val _shoebrandName = MutableLiveData<String>()
+    val shoeBrandName: LiveData<String>
+        get() = _shoebrandName
 
 
 }

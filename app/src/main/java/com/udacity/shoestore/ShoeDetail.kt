@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
+import kotlinx.android.synthetic.main.fragment_shoe_detail.*
 
 
 /**
@@ -23,10 +25,15 @@ class ShoeDetail : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
+        var binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
             inflater, R.layout.fragment_shoe_detail, container, false)
+
         return binding.root
     }
 
+    private fun loadShoeDetails(shoe: Shoe)
+    {
+
+    }
 
 }
