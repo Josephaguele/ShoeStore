@@ -23,9 +23,6 @@
             android:id="@+id/action_welcomeFragment_to_shoeFragment"
             app:destination="@id/shoeFragment"
             app:enterAnim="@anim/slide_anyhow" />
-        <action
-            android:id="@+id/action_welcomeFragment_self"
-            app:destination="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/instructionFragment"

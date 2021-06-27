@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
 import com.udacity.shoestore.models.ShoeViewModel
+import kotlinx.android.synthetic.main.fragment_shoe_detail.*
 
 
 /**
@@ -20,7 +21,6 @@ import com.udacity.shoestore.models.ShoeViewModel
  */
 class ShoeFragment : Fragment() {
 
-    private lateinit var viewViewModel: ShoeViewModel
 
     private lateinit var binding: FragmentShoelistBinding
 
@@ -30,12 +30,8 @@ class ShoeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentShoelistBinding>(
+         binding = DataBindingUtil.inflate<FragmentShoelistBinding>(
             inflater, R.layout.fragment_shoelist, container, false)
-
-
-        Log.i("ShoeFragment", "Called viewModelProvider class")
-        viewViewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         // onclick for  the shoelist floating action button
         binding.shoelistfloatingButton.setOnClickListener(
@@ -43,11 +39,8 @@ class ShoeFragment : Fragment() {
         )
 
 
+
         return binding.root
     }
-
-
-
-
 
 }
