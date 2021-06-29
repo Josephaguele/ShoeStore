@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/shoeFragment"
-        android:name="com.udacity.shoestore.ShoeFragment"
+        android:name="com.udacity.shoestore.ShoeListFragment"
         android:label="Shoe Fragment" >
         <action
             android:id="@+id/action_shoeFragment_to_welcomeFragment2"

@@ -11,24 +11,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
 import com.udacity.shoestore.models.ShoeViewModel
-import kotlinx.android.synthetic.main.fragment_shoe_detail.*
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ShoeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ShoeFragment : Fragment() {
+class ShoeListFragment : Fragment() {
 
 
     private lateinit var binding: FragmentShoelistBinding
+    private lateinit var viewModel: ShoeViewModel
+    lateinit var shoeTitle: String
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
          binding = DataBindingUtil.inflate<FragmentShoelistBinding>(
             inflater, R.layout.fragment_shoelist, container, false)
@@ -37,10 +30,15 @@ class ShoeFragment : Fragment() {
         binding.shoelistfloatingButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeFragment_to_shoeDetail)
         )
-
-
-
+        Log.i("ShoeFragment", "Called viewModelProvider class")
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ViewModelProvider(this).get(ShoeViewModel::class.java)
+
+    }
+
 
 }

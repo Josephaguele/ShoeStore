@@ -15,16 +15,14 @@ import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.models.ShoeViewModel
 import kotlinx.android.synthetic.main.fragment_shoe_detail.*
+import kotlin.properties.ReadOnlyProperty
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ShoeDetail.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class ShoeDetail : Fragment() {
 
-    private lateinit var shoeviewModel: ShoeViewModel
+    private lateinit var  shoeviewModel: ShoeViewModel
+
     private lateinit var binding : FragmentShoeDetailBinding
 
     override fun onCreateView(
@@ -34,7 +32,7 @@ class ShoeDetail : Fragment() {
         binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(
             inflater, R.layout.fragment_shoe_detail, container, false)
 
-        Log.i("ShoeFragment", "Called viewModelProvider class")
+        Log.i("ShoeDETAIL", "Called viewModelProvider class")
         shoeviewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         binding.saveButton.setOnClickListener {
@@ -48,7 +46,17 @@ class ShoeDetail : Fragment() {
         return binding.root
     }
 
-    var mBrandName = ""
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        shoeviewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+
+        mBrandName = binding.brandName?.text.toString()
+        mSize = binding.size.text.toString()
+        mDescription = binding.description.text.toString()
+        mShoeName = binding.editName.text.toString()
+    }
+
+    lateinit var mBrandName :String
     var mDescription = ""
     var mSize = ""
     var mShoeName = ""
