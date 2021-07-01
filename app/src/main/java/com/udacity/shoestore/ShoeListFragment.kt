@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
 import com.udacity.shoestore.models.ShoeViewModel
+import kotlinx.android.synthetic.main.fragment_shoelist.*
 
 
 class ShoeListFragment : Fragment() {
@@ -32,13 +34,13 @@ class ShoeListFragment : Fragment() {
         )
         Log.i("ShoeFragment", "Called viewModelProvider class")
         return binding.root
+
+        val model = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        model.mBrandName.observe(viewLifecycleOwner, Observer {shoeTitle = model.mBrandName.toString()  })
+
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        ViewModelProvider(this).get(ShoeViewModel::class.java)
-
-    }
 
 
 }

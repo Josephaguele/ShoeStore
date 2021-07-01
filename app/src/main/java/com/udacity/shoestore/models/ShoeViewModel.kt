@@ -9,17 +9,12 @@ import java.util.*
 
 class ShoeViewModel : ViewModel() {
 
-
-    var mBrandName = ""
-    var mDescription = ""
-    var mSize = ""
-    var mShoeName = ""
+    var mBrandName = MutableLiveData<String>()
 
     // The list of shoes and details
-    private lateinit var shoes:MutableLiveData<Shoe>
+    private lateinit var shoes:MutableLiveData<String>
 
-
-    fun select(item: Shoe) {
+    fun select(item: String) {
         shoes.value = item
     }
 
@@ -31,8 +26,4 @@ class ShoeViewModel : ViewModel() {
         super.onCleared()
         Log.i("ShoeModel: ", "ShoeViewlModel destroyed")
     }
-
-
-
-
 }
