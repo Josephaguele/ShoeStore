@@ -42,13 +42,18 @@ class ShoeViewModel : ViewModel() {
     {
         val title = mShoeName.value!!
         val description = mShoeDescription.value!!
+        val size = mShoeSize.value!!
+        val ss = size.toDouble() // converting size to double
+        val company = mShoeBrand.value!!
         if(title.isBlank() || description.isBlank())
         {
             isStringEmpty.value = true
         }else{
             mShoeName.value = " "
             mShoeDescription.value = " "
-            var shoeItem = Shoe(title, description)
+            mShoeBrand.value= ""
+            mShoeSize.value = ""
+            var shoeItem = Shoe(title, ss ,company, description)
             arraylst.add(shoeItem)
             list.value = arraylst
         }

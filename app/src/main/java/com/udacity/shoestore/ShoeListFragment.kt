@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.shoestore.databinding.FragmentShoelistBinding
 import com.udacity.shoestore.models.ShoeViewModel
+import kotlinx.android.synthetic.main.fragment_shoe_detail.*
 import kotlinx.android.synthetic.main.fragment_shoelist.*
 
 
@@ -36,6 +37,7 @@ class ShoeListFragment : Fragment() {
         return binding.root
 
         val model = ViewModelProvider(this).get(ShoeViewModel::class.java)
+
 
 
     }
