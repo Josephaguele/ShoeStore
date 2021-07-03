@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--To include data binding in the UI, enclose all content with <layout></layout>  -->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ShoeDetail">
 
+    <!--The ViewModel is introduced to the layout in the <data></data> section, as shown.
+     Ensure that the type value points to the specific folder that has the required ViewModel-->
+    <data>
+        <variable
+            name="ShoeViewModel"
+            type="com.udacity.shoestore.models.ShoeViewModel" />
+    </data>
 
+    <!--other UI components-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="9dp">
 
+        <!--The save and cancel buttons wil connect to the ShoeViewModel by
+         @{()->ShoeViewModel.addData()} statement -->
         <Button
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="Save"
+            android:onClick="@{()->ShoeViewModel.addData()}"
             style="@style/Widget.AppCompat.Button.Colored"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +37,7 @@
 
         <Button
             android:id="@+id/cancel_button"
+            android:onClick="@{()->ShoeViewModel.clearData()}"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,6 +48,8 @@
             app:layout_constraintTop_toBottomOf="@+id/description"
             app:layout_constraintVertical_bias="0.912" />
 
+        <!--The EditText widgets will be bound to the ShoeViewModel using
+     @= {ShoeViewModel.mShoeBrand} statement-->
         <EditText
             android:id="@+id/brand_name"
             android:layout_width="wrap_content"
@@ -43,6 +58,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="308dp"
             android:hint="@string/brand_name"
+            android:text="@={ShoeViewModel.MShoeBrand}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.016"
@@ -56,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="1dp"
             android:hint="@string/shoe_description"
+            android:text="@={ShoeViewModel.MShoeDescription}"
             android:layout_marginEnd="1dp"
             android:layout_marginBottom="172dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -71,6 +88,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="12dp"
             android:hint="@string/shoe_size"
+            android:text="@={ShoeViewModel.MShoeSize}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.883"
@@ -85,6 +103,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginEnd="9dp"
             android:hint="@string/shoe_name"
+            android:text="@={ShoeViewModel.MShoeName}"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

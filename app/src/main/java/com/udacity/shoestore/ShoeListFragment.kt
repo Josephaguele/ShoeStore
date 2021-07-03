@@ -36,7 +36,6 @@ class ShoeListFragment : Fragment() {
         return binding.root
 
         val model = ViewModelProvider(this).get(ShoeViewModel::class.java)
-        model.mBrandName.observe(viewLifecycleOwner, Observer {shoeTitle = model.mBrandName.toString()  })
 
 
     }
