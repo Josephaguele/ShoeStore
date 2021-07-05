@@ -9,6 +9,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ShoeViewModel : ViewModel() {
+    /*The purpose of the ViewModel is to acquire and keep the information that is necessary
+    for an Activity or a Fragment. The Activity or the Fragment should be able to observe changes in the ViewModel.
+     ViewModels usually expose this information via LiveData or Android Data Binding.*/
 
     // this helps determine whether or not the user's input is empty
     val isStringEmpty = MutableLiveData<Boolean>()

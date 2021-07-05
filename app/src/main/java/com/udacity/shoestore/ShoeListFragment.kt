@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -20,7 +21,9 @@ class ShoeListFragment : Fragment() {
 
 
     private lateinit var binding: FragmentShoelistBinding
-    private lateinit var viewModel: ShoeViewModel
+
+    // ActivityViewModels can be used to share data between two fragments
+    private  val viewModel: ShoeViewModel by activityViewModels()
     lateinit var shoeTitle: String
 
 
@@ -33,15 +36,17 @@ class ShoeListFragment : Fragment() {
         binding.shoelistfloatingButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeFragment_to_shoeDetail)
         )
+
+        // The code below is what receives the details from the lifecycle observer and sends it to the
+        // shoedescription textview
+        viewModel.list.observe(this.viewLifecycleOwner, Observer<Any>
+        {
+            shoedescriptionText.text = it.toString()
+        })
+
+
         Log.i("ShoeFragment", "Called viewModelProvider class")
         return binding.root
 
-        val model = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
-
-
     }
-
-
-
 }

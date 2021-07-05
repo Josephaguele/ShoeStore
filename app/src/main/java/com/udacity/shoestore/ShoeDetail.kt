@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -23,7 +24,7 @@ import kotlin.properties.ReadOnlyProperty
 
 class ShoeDetail : Fragment() {
 
-    private lateinit var  viewModel: ShoeViewModel
+    private val  viewModel: ShoeViewModel by activityViewModels()
     private lateinit var binding : FragmentShoeDetailBinding
 
     override fun onCreateView(
@@ -32,12 +33,12 @@ class ShoeDetail : Fragment() {
         binding = DataBindingUtil.inflate<FragmentShoeDetailBinding>(inflater, R.layout.fragment_shoe_detail, container, false)
         val factory = ShoeViewModelFactory()
 
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        //viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         Log.i("ShoeDETAIL", "Called viewModelProvider class")
         binding.shoeViewModel = viewModel
         binding.lifecycleOwner = this
-        viewModel.list.observe(this.viewLifecycleOwner, Observer{binding.content.text = it.toString()})
+        viewModel.list.observe(this.viewLifecycleOwner, Observer{binding.content.text =  it.toString()})
 
 
         return binding.root
