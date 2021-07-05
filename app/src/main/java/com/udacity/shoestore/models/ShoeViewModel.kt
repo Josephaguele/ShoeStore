@@ -1,11 +1,8 @@
 package com.udacity.shoestore.models
 
 import android.util.Log
-import android.widget.EditText
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.util.*
 import kotlin.collections.ArrayList
 
 class ShoeViewModel : ViewModel() {
@@ -43,12 +40,12 @@ class ShoeViewModel : ViewModel() {
     // The arraylst is then stored in list.
     fun addData()
     {
-        val title = mShoeName.value!!
-        val description = mShoeDescription.value!!
-        val size = mShoeSize.value!!
-        val ss = size.toDouble() // converting size to double
-        val company = mShoeBrand.value!!
-        if(title.isBlank() || description.isBlank())
+        var title = mShoeName.value
+        val description = mShoeDescription.value
+        val size = mShoeSize.value
+        val ss = size?.toDouble() // converting size to double
+        val company = mShoeBrand.value
+        if(title?.isBlank() == true)
         {
             isStringEmpty.value = true
         }else{
@@ -56,7 +53,7 @@ class ShoeViewModel : ViewModel() {
             mShoeDescription.value = " "
             mShoeBrand.value= ""
             mShoeSize.value = ""
-            var shoeItem = Shoe(title, ss ,company, description)
+            var shoeItem = Shoe(title.toString(), ss , company.toString(), description.toString())
             arraylst.add(shoeItem)
             list.value = arraylst
         }

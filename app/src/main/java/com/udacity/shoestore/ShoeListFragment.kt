@@ -24,7 +24,6 @@ class ShoeListFragment : Fragment() {
 
     // ActivityViewModels can be used to share data between two fragments
     private  val viewModel: ShoeViewModel by activityViewModels()
-    lateinit var shoeTitle: String
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -42,6 +41,7 @@ class ShoeListFragment : Fragment() {
         viewModel.list.observe(this.viewLifecycleOwner, Observer<Any>
         {
             shoedescriptionText.text = it.toString()
+            shoe_name.text = it.toString().capitalize()
         })
 
 

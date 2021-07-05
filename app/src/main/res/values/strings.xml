@@ -8,7 +8,8 @@
     <string name="shoe_inventory">Talehz Shoes</string>
     <string name="name_hint">username</string>
     <string name="password_hint">password</string>
-    <string name="instruction">Here we show you how to navigate the store. This app teaches you about the different kinds of shoes we have, how to use them, the best time to use them and their various prices. Click on the button below to view the list of shoes in our store</string>
+    <string name="instruction">Here we show you how to navigate the store. This app teaches you about the different kinds of shoes we have, how to use them, the best time to use them and their various prices. Click on the button below to view the list of shoes in our store.
+    Please note that the text fields must be filled completely in order to avoid errors while using this app</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="click_tosee">Click to see the shoe rack</string>
     <string name="see_instruction">See Instruction</string>
