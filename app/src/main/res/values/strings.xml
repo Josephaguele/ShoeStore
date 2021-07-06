@@ -20,5 +20,6 @@
     <string name="shoe_name">Shoe Name</string>
     <string name="shoe_description">shoe description</string>
     <string name="shoe_size">shoe size</string>
+    <string name="log_out">Log out</string>
 
 </resources>

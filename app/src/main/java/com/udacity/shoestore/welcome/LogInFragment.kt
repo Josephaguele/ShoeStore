@@ -36,7 +36,7 @@ class LogInFragment : Fragment() {
     // Return true if NavigationUI.onNavDestinationSelected returns true, else return
     // super.onOptionsItemSelected
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(item!!, view!!.findNavController())
+        return NavigationUI.onNavDestinationSelected(item!!, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 }
